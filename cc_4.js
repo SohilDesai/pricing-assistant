@@ -83,3 +83,18 @@ for (let i = 0; i < customerCarts.length; i++) {
 
   console.log(`Customer ${i + 1} Total Cost: $${cartTotal.toFixed(2)}`);
 }
+console.log("Single Product Details:");
+
+for (let key in products[0]) {
+  console.log(`${key}: ${products[0][key]}`);
+}
+
+console.log("Updated Product Inventory:");
+
+for (let product of products) {
+  for (let [key, value] of Object.entries(product)) {
+    console.log(`${key}: ${value}`);
+  }
+
+  console.log("----------------------");
+}
