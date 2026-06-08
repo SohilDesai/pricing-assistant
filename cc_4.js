@@ -62,3 +62,24 @@ if (customerType === "student") {
 } else {
   extraDiscount = 0;
 }
+let customerCarts = [
+  [products[0], products[2]],
+  [products[1], products[3]],
+  [products[4], products[2]]
+];
+
+for (let i = 0; i < customerCarts.length; i++) {
+  let cartTotal = 0;
+
+  for (let item of customerCarts[i]) {
+    let finalItemPrice = item.discountedPrice * (1 - extraDiscount);
+
+    cartTotal += finalItemPrice;
+
+    if (item.inventory > 0) {
+      item.inventory--;
+    }
+  }
+
+  console.log(`Customer ${i + 1} Total Cost: $${cartTotal.toFixed(2)}`);
+}
