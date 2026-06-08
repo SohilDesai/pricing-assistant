@@ -52,3 +52,13 @@ for (let product of products) {
 
   product.discountedPrice = product.price * (1 - product.discountRate);
 }
+let customerType = "student";
+let extraDiscount = 0;
+
+if (customerType === "student") {
+  extraDiscount = 0.05;
+} else if (customerType === "senior") {
+  extraDiscount = 0.07;
+} else {
+  extraDiscount = 0;
+}
